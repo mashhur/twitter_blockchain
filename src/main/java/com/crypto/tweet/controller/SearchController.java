@@ -16,28 +16,28 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class SearchController {
-	
-	private final TwitterTemplate twitterTemplate;
-    
+
+    private final TwitterTemplate twitterTemplate;
+
     public SearchController(TwitterTemplate twitterTemplate) {
-        this.twitterTemplate=twitterTemplate;
+        this.twitterTemplate = twitterTemplate;
     }
 
     @GetMapping(path = "tweet")
     public String searchTwitter(Model model, @RequestParam String search) {
-    	
-    	int count = 200;
-    	
+
+        int count = 200;
+
         SearchResults results = twitterTemplate.searchOperations().search(
-        	    new SearchParameters(search)
-        	        .resultType(SearchParameters.ResultType.RECENT)
-        	        .count(count));
+                new SearchParameters(search)
+                        .resultType(SearchParameters.ResultType.RECENT)
+                        .count(count));
 
         List<Tweet> tweets = results.getTweets();
         model.addAttribute("tweets", tweets);
         model.addAttribute("count", count);
         model.addAttribute("search", search);
-        
+
         return "search";
     }
 

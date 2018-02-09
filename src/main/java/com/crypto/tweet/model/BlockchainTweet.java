@@ -2,9 +2,10 @@ package com.crypto.tweet.model;
 
 import com.couchbase.client.java.repository.annotation.Field;
 import com.couchbase.client.java.repository.annotation.Id;
-import java.util.Date;
-import javax.validation.constraints.NotNull;
 import org.springframework.data.couchbase.core.mapping.Document;
+
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Document
 public class BlockchainTweet {

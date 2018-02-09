@@ -22,18 +22,20 @@ $(document).ready(function () {
     }
 
     function onConnected() {
-        stompClient.subscribe("/topic/tweet/location", function(data) {
-            var location = data.data;
-            if (location != "") {
+        stompClient.subscribe("/topic/tweet/location", function (data) {
+            var location = data.body;
+            if (location != undefined && location != "") {
                 words.push(location);
-            };
+            }
+            ;
         });
 
-        stompClient.subscribe("/topic/tweet/hashtags", function(data) {
-            var hashtags = data.data;
+        stompClient.subscribe("/topic/tweet/hashtags", function (data) {
+            var hashtags = data.body;
             if (hashtags != undefined && hashtags != "") {
                 hashTagsArr.push(hashtags);
-            };
+            }
+            ;
         });
 
         // Tell your username to the server
