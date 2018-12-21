@@ -1,9 +1,6 @@
 # Twitter-blockchain-spring [![Build Status](https://travis-ci.org/mashhur/twitter_blockchain.svg?branch=master)](https://travis-ci.org/mashhur/twitter_blockchain)
 
-## Instructions
-NOTE: Tech stack of this project is forked from https://github.com/RawSanj/spring-twitter-stream, thanks to RawSanj to build a template.
-
-### Twitter & API info
+## Twitter & API info
 If you don't have twitter account, visit https://apps.twitter.com and create an app.
 API : https://developer.twitter.com/en/docs/tweets/filter-realtime/overview
 
