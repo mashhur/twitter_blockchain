@@ -38,6 +38,7 @@ public class CouchbaseConfiguration {
         return ret;
     }
 
+    // TODO: move this method to repo & service
     public void write(Tweet tweet) {
 
         String jsonString = gson.toJson(tweet);
